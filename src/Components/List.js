@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from 'react';
 
-function List() {
 
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-        document.title = `Você clicou ${count} vezes`;
-    });
-
+function List({users}) {
     return (
-    <div className="List">
-        lista
-    </div>
-);
+        <div className="List">
+            {users.map(user => (
+                <div key={user.id}>{user.name}</div>
+            ))
+        }
+        </div>
+    );
 }
 
 export default List;
